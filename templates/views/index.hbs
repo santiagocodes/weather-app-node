@@ -7,20 +7,44 @@
     <title>Weather-App</title>
     <link rel="icon" href="/img/weather.png">
     <link rel="stylesheet" href="/css/style.css" />
+    <script src="https://kit.fontawesome.com/b1a8a7536f.js" crossorigin="anonymous"></script>
+    <style>
+        #menu-toggle:checked+#menu {
+            display: block;
+        }
+    </style>
 </head>
 
-<body>
-    <main>
-        {{>header}}
-        <p>Weather forecast for today...</p>
-        <form action="">
-            <input type="text">
-            <button placeholder="Location">Search</button>
-        </form>
+<body class='flex flex-col min-h-screen bg-teal-200 text-indigo-900'>
+    {{>header}}
+    <main class='bg-white flex-grow flex w-full'>
+        <div
+            class="container bg-teal-200 shadow border rounded mx-2 my-auto pb-8 px-1 sm:mx-auto sm:p-2 md:my-40 md:p-8">
+            <img id='weatherImage' class='rounded-full bg-gray-100 shadow-2xl h-12 -mt-6 mx-auto p-2 sm:h-16 sm:-mt-10'
+                src='/img/weather.png' alt="weather icon">
+            <p id="description" class="text-center font-medium">----</p>
 
-        <p class="messageOne"></p>
+            <form class='mt-1 flex shadow-xl sm:mt-8' action="">
+                <input id='locationInput' class='flex-grow h-8 px-6 py-2 rounded-full text-black outline-none'
+                    type="text" placeholder="Location">
+                <button
+                    class='text-blue-dark bg-white -ml-8 px-4 rounded full uppercase rounded-full -ml-8 text-sm outline-none'
+                    placeholder="Location">Search</button>
+            </form>
 
-        <p class="messageTwo"></p>
+            <div class="grid sm:grid-rows-1 grid-flow-col gap-4 mt-8 p-4 bg-gray-100 rounded shadow-xl sm:mx-16">
+                <p id="temperature"
+                    class="font-bold text-center inline-block self-center text-3xl row-span-1 col-span-1 sm:text-5xl">
+                    --°C</p>
+                <div class="font-medium row-span-1 col-span-3">
+                    <p id="feelsLike">Feels Like: --°C</p>
+                    <p id="precip">Precip: --</p>
+                    <p id="wind">Wind -- --</p>
+                </div>
+            </div>
+
+            <p id="lastUpdate" class="text-right mt-8 text-xs">Last Update: -----</p>
+        </div>
     </main>
     {{>footer}}
     <script src="./js/app.js"></script>

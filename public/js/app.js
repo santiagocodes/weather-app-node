@@ -1,25 +1,37 @@
 console.log("Client side JavaScript file is loaded");
 
 const weatherForm = document.querySelector("form");
-const search = document.querySelector("input");
-const messageOne = document.querySelector(".messageOne");
-const messageTwo = document.querySelector(".messageTwo");
+const weatherImage = document.querySelector("#weatherImage");
+const description = document.querySelector("#description");
+const locationInput = document.querySelector("#locationInput");
+const temperature = document.querySelector("#temperature");
+const feelsLike = document.querySelector("#feelsLike");
+const precip = document.querySelector("#precip");
+const wind = document.querySelector("#wind");
+const lastUpdate = document.querySelector("#lastUpdate");
 
 weatherForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const location = search.value;
-  messageOne.textContent = "Loading...";
-  messageTwo.textContent = "";
+  const location = locationInput.value;
+  console.log(locationInput.placeholder);
+  lastUpdate.textContent = "Loading...";
 
   fetch(`http://localhost:3000/weather?address=${location}`).then(
     (response) => {
       response.json().then((data) => {
+        console.log(data);
         if (data.error) {
-          messageOne.textContent =
+          lastUpdate.textContent =
             "Opps. It looks like there has been an error.";
         } else {
-          messageOne.textContent = `Location: ${data.location}`;
-          messageTwo.textContent = `Forecast: ${data.forecast}`;
+          locationInput.value = data.location;
+          weatherImage.src = data.forecast.weatherIcon;
+          description.textContent = data.forecast.description;
+          temperature.textContent = `${data.forecast.temperature} °C`;
+          feelsLike.textContent = `Feels Like: ${data.forecast.feelsLike} °C`;
+          precip.textContent = `Precip: ${data.forecast.precip}`;
+          wind.textContent = `Wind: ${data.forecast.wind} ${data.forecast.windDir}`;
+          lastUpdate.textContent = `Last Update: ${new Date().toLocaleTimeString()}`;
         }
       });
     }

@@ -4,9 +4,7 @@ require("dotenv").config();
 const geocode = (address, callback) => {
   const geocodeURL = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(
     address
-  )}.json?proximity=-74.70850,40.78375&access_token=${
-    process.env.accessKey_mapBox
-  }&limit=1`;
+  )}.json?access_token=${process.env.accessKey_mapBox}&limit=1`;
 
   request({ url: geocodeURL, json: true }, (error, response) => {
     if (error) {
