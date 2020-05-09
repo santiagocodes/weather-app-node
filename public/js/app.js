@@ -13,8 +13,7 @@ const lastUpdate = document.querySelector("#lastUpdate");
 weatherForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const location = locationInput.value;
-  console.log(locationInput.placeholder);
-  lastUpdate.textContent = "Loading...";
+  locationInput.value = "Loading...";
 
   fetch(`http://localhost:3000/weather?address=${location}`).then(
     (response) => {
@@ -30,7 +29,7 @@ weatherForm.addEventListener("submit", (e) => {
           temperature.textContent = `${data.forecast.temperature} °C`;
           feelsLike.textContent = `Feels Like: ${data.forecast.feelsLike} °C`;
           precip.textContent = `Precip: ${data.forecast.precip}`;
-          wind.textContent = `Wind: ${data.forecast.wind} ${data.forecast.windDir}`;
+          wind.textContent = `Wind Speed(Dir): ${data.forecast.wind} (${data.forecast.windDir})`;
           lastUpdate.textContent = `Last Update: ${new Date().toLocaleTimeString()}`;
         }
       });

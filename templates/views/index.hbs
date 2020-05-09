@@ -17,29 +17,32 @@
 
 <body class='flex flex-col min-h-screen bg-teal-200 text-indigo-900'>
     {{>header}}
-    <main class='bg-white flex-grow flex w-full'>
+    <main class='bg-gray-100 flex-grow flex w-full'>
         <div
-            class="container bg-teal-200 shadow border rounded mx-2 my-auto pb-8 px-1 sm:mx-auto sm:p-2 md:my-40 md:p-8">
-            <img id='weatherImage' class='rounded-full bg-gray-100 shadow-2xl h-12 -mt-6 mx-auto p-2 sm:h-16 sm:-mt-10'
+            class="container bg-teal-200 shadow-xl border rounded mx-2 my-auto pb-8 px-1 sm:p-8 md:px-8 md:py-16 sm:mx-auto sm:max-w-lg md:max-w-2xl">
+            <img id='weatherImage'
+                class='rounded-full bg-white shadow-2xl p-1 h-12 sm:h-16 -mt-6 sm:-mt-16 mx-auto  sm:-mt-24'
                 src='/img/weather.png' alt="weather icon">
-            <p id="description" class="text-center font-medium">----</p>
+            <p id="description" class="text-center font-medium md:mt-2">----</p>
 
-            <form class='mt-1 flex shadow-xl sm:mt-8' action="">
-                <input id='locationInput' class='flex-grow h-8 px-6 py-2 rounded-full text-black outline-none'
-                    type="text" placeholder="Location">
+            <form class='mt-1 flex sm:mt-8' action="">
+                <input id='locationInput'
+                    class='flex-grow h-8 px-6 py-2 rounded-full text-indigo-900 shadow-xl outline-none' type="text"
+                    placeholder="Location">
                 <button
-                    class='text-blue-dark bg-white -ml-8 px-4 rounded full uppercase rounded-full -ml-8 text-sm outline-none'
+                    class='text-indigo-900 bg-white -ml-8 px-4 rounded full uppercase rounded-full -ml-8 text-sm shadow-xl outline-none'
                     placeholder="Location">Search</button>
             </form>
 
-            <div class="grid sm:grid-rows-1 grid-flow-col gap-4 mt-8 p-4 bg-gray-100 rounded shadow-xl sm:mx-16">
+            <div
+                class="bg-white rounded shadow-xl mt-8 p-1 sm:p-4 md:px-12 md:py-4 sm:mx-16 grid sm:grid-rows-1 grid-flow-col gap-4 md:gap-12">
                 <p id="temperature"
                     class="font-bold text-center inline-block self-center text-3xl row-span-1 col-span-1 sm:text-5xl">
                     --°C</p>
                 <div class="font-medium row-span-1 col-span-3">
                     <p id="feelsLike">Feels Like: --°C</p>
                     <p id="precip">Precip: --</p>
-                    <p id="wind">Wind -- --</p>
+                    <p id="wind">Wind Speed(Dir): -- --</p>
                 </div>
             </div>
 
