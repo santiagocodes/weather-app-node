@@ -8,48 +8,45 @@
     <link rel="icon" href="/img/weather.png">
     <link rel="stylesheet" href="/css/style.css" />
     <script src="https://kit.fontawesome.com/b1a8a7536f.js" crossorigin="anonymous"></script>
-    <style>
-        #menu-toggle:checked+#menu {
-            display: block;
-        }
-    </style>
 </head>
 
-<body class='flex flex-col min-h-screen bg-teal-200 text-indigo-900'>
-    {{>header}}
-    <main class='bg-gray-100 flex-grow flex w-full'>
-        <div
-            class="container bg-teal-200 shadow-xl border rounded mx-2 my-auto pb-8 px-1 sm:p-8 md:px-8 md:py-16 lg:py-20 sm:mx-auto sm:max-w-lg md:max-w-2xl lg:max-w-4xl">
-            <img id='weatherImage'
-                class='rounded-full bg-white shadow-2xl p-1 lg:p-2 h-12 sm:h-16 lg:h-24 -mt-6 sm:-mt-16 lg:-mt-32 mx-auto  sm:-mt-24'
-                src='/img/weather.png' alt="weather icon">
-            <p id="description" class="text-center font-medium lg:text-xl md:mt-2 lg:mt-4">----</p>
-
-            <form class='mt-1 flex sm:mt-8 lg:mx-8' action="">
-                <input id='locationInput'
-                    class='flex-grow h-8 lg:h-10 px-6 py-2 rounded-full text-indigo-900 lg:text-xl shadow-xl outline-none'
-                    type="text" placeholder="Location">
-                <button
-                    class='text-indigo-900 bg-white border-none -ml-8 px-4 lg:px-6 rounded full uppercase rounded-full -ml-8 text-sm lg:text-base shadow-xl outline-none'
-                    placeholder="Location">Search</button>
-            </form>
-
+<body class="">
+    <div class='bg-color-one text-colorT-one flex flex-col min-h-screen'>
+        {{>header}}
+        <main class='bg-color-two flex-grow flex w-full'>
             <div
-                class="bg-white rounded-lg lg:tracking-wider shadow-lg mt-8 lg:mt-16 p-1 sm:p-4 md:px-12 md:py-4 sm:mx-16 lg:mx-8 grid sm:grid-rows-1 grid-flow-col gap-4 md:gap-12">
-                <p id="temperature"
-                    class="font-bold text-center inline-block self-center text-3xl lg:6xl row-span-1 col-span-1 sm:text-5xl">
-                    --°C</p>
-                <div class="font-medium lg:text-xl leading-relaxed lg:leading-loose row-span-1 col-span-3">
-                    <p id="feelsLike">Feels Like: --°C</p>
-                    <p id="precip">Precip: --</p>
-                    <p id="wind">Wind Speed(Dir): -- --</p>
-                </div>
-            </div>
+                class="container bg-color-one shadow-xl border rounded mx-2 my-auto pb-8 px-1 sm:p-8 md:px-8 md:py-16 lg:py-20 sm:mx-auto sm:max-w-lg md:max-w-2xl lg:max-w-4xl">
+                <img id='weatherImage'
+                    class='bg-teal-100 rounded-full border shadow-2xl p-2 lg:p-2 h-12 -mt-6 sm:h-16 sm:-mt-16 md:h-20 md:-mt-24 lg:h-24 lg:-mt-32 mx-auto'
+                    src='/img/weather.png' alt="weather icon">
+                <p id="description" class="text-center font-medium lg:text-xl md:mt-2 lg:mt-4">----</p>
 
-            <p id="lastUpdate" class="text-right mt-8 lg:mt-20 lg:-mb-8 text-xs lg:text-base ">Last Update: -----</p>
-        </div>
-    </main>
-    {{>footer}}
+                <form class='mt-1 flex sm:mt-8 lg:mx-8' action="">
+                    <input id='locationInput'
+                        class='bg-color-two flex-grow h-8 lg:h-10 px-6 py-2 rounded-full text-colorT-two lg:text-xl shadow-xl outline-none'
+                        type="text" placeholder="Location">
+                    <button
+                        class='text-colorT-one bg-color-two border-none -ml-8 px-4 lg:px-6 rounded full uppercase rounded-full -ml-8 text-sm lg:text-base shadow-xl outline-none'
+                        placeholder="Location">Search</button>
+                </form>
+
+                <div
+                    class="bg-color-two rounded-lg lg:tracking-wider shadow-lg mt-8 lg:mt-16 p-1 sm:p-4 md:px-12 md:py-4 sm:mx-16 lg:mx-8 grid sm:grid-rows-1 grid-flow-col gap-4 md:gap-12">
+                    <p id="temperature"
+                        class="font-bold text-center inline-block self-center text-3xl lg:6xl row-span-1 col-span-1 sm:text-5xl">
+                        --°C</p>
+                    <div class="font-medium lg:text-xl leading-relaxed lg:leading-loose row-span-1 col-span-3">
+                        <p id="feelsLike">Feels Like: --°C</p>
+                        <p id="precip">Precip: --</p>
+                        <p id="wind">Wind Speed(Dir): -- --</p>
+                    </div>
+                </div>
+
+                <p id="lastUpdate" class="text-right mt-8 lg:mt-20 lg:-mb-8 text-xs lg:text-base">Last Update: -----</p>
+            </div>
+        </main>
+        {{>footer}}
+    </div>
     <script src="./js/app.js"></script>
 </body>
 

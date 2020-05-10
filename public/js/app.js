@@ -10,6 +10,33 @@ const precip = document.querySelector("#precip");
 const wind = document.querySelector("#wind");
 const lastUpdate = document.querySelector("#lastUpdate");
 
+const toggleDarkMode = document.querySelector("#toggleDarkMode");
+let darkMode = localStorage.getItem("darkMode");
+
+const enableDarkMode = () => {
+  document.body.classList.add("darkmode");
+  localStorage.setItem("darkMode", "enabled");
+};
+
+const disableDarkMode = () => {
+  document.body.classList.remove("darkmode");
+  localStorage.setItem("darkMode", null);
+};
+
+if (darkMode === "enabled") {
+  enableDarkMode();
+}
+
+toggleDarkMode.addEventListener("click", () => {
+  console.log("toggle");
+  darkMode = localStorage.getItem("darkMode");
+  if (darkMode !== "enabled") {
+    enableDarkMode();
+  } else {
+    disableDarkMode();
+  }
+});
+
 weatherForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const location = locationInput.value;

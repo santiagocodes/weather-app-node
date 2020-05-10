@@ -10,6 +10,18 @@ module.exports = {
         "-50p": "-50%",
         "50p": "50%",
       },
+      colors: {
+        color: {
+          one: "var(--bg-color-one)",
+          two: "var(--bg-color-two)",
+          three: "var(--bg-color-three)",
+        },
+        colorT: {
+          one: "var(--text-colorT-one)",
+          two: "var(--text-colorT-two)",
+          three: "var(--text-colorT-three)",
+        },
+      },
     },
   },
   variants: {},
