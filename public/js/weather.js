@@ -15,24 +15,21 @@ weatherForm.addEventListener("submit", (e) => {
   const location = locationInput.value;
   description.textContent = "Loading...";
 
-  fetch(`http://localhost:3000/weather?address=${location}`).then(
-    (response) => {
-      response.json().then((data) => {
-        console.log(data);
-        if (data.error) {
-          lastUpdate.textContent =
-            "Opps. It looks like there has been an error.";
-        } else {
-          locationInput.value = data.location;
-          weatherImage.src = data.forecast.weatherIcon;
-          description.textContent = data.forecast.description;
-          temperature.textContent = `${data.forecast.temperature} °C`;
-          feelsLike.textContent = `Feels Like: ${data.forecast.feelsLike} °C`;
-          precip.textContent = `Precip: ${data.forecast.precip}`;
-          wind.textContent = `Wind Speed(Dir): ${data.forecast.wind} (${data.forecast.windDir})`;
-          lastUpdate.textContent = `Last Update: ${new Date().toLocaleTimeString()}`;
-        }
-      });
-    }
-  );
+  fetch(`/weather?address=${location}`).then((response) => {
+    response.json().then((data) => {
+      console.log(data);
+      if (data.error) {
+        lastUpdate.textContent = "Opps. It looks like there has been an error.";
+      } else {
+        locationInput.value = data.location;
+        weatherImage.src = data.forecast.weatherIcon;
+        description.textContent = data.forecast.description;
+        temperature.textContent = `${data.forecast.temperature} °C`;
+        feelsLike.textContent = `Feels Like: ${data.forecast.feelsLike} °C`;
+        precip.textContent = `Precip: ${data.forecast.precip}`;
+        wind.textContent = `Wind Speed(Dir): ${data.forecast.wind} (${data.forecast.windDir})`;
+        lastUpdate.textContent = `Last Update: ${new Date().toLocaleTimeString()}`;
+      }
+    });
+  });
 });
