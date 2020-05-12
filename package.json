@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/app.js",
-    "build:css": "tailwind build src/style.css -o public/css/style.css"
+    "start": "node src/app.js"
   },
   "keywords": [],
   "author": "",

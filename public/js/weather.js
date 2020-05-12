@@ -19,7 +19,9 @@ weatherForm.addEventListener("submit", (e) => {
     response.json().then((data) => {
       console.log(data);
       if (data.error) {
-        lastUpdate.textContent = "Opps. It looks like there has been an error.";
+        description.textContent =
+          "Opps. It looks like there has been an error.";
+        lastUpdate.textContent = data.error;
       } else {
         locationInput.value = data.location;
         weatherImage.src = data.forecast.weatherIcon;
