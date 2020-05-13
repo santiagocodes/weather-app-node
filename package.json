@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/app.js",
+    "dev": "nodemon src/app.js -e js,hbs",
     "build:css": "tailwind build src/style.css -o public/css/style.css"
   },
   "keywords": [],
@@ -16,5 +17,8 @@
     "hbs": "^4.1.1",
     "postman-request": "^2.88.1-postman.22",
     "tailwindcss": "^1.4.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
   }
 }
