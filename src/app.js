@@ -81,7 +81,7 @@ app.get("*", (req, res) => {
   res.render("404", {
     title: "404",
     name: "Maria del Carmen ",
-    errorTxt: "Page not found.",
+    errorTxt: "Oh no! Page not found.",
   });
 });
 
