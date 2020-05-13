@@ -19,25 +19,32 @@
                 <img class="h-40 sm:h-48 md:h-56 lg:h-64 w-full object-contain mt-4 mb-6 sm:mb-8 md:mb-12 lg:mb-16"
                     src="/img/whatHappened.jpeg" alt="picture of maria del carmen from santiagocodes" />
                 <div class="leading-7 lg:text-xl leading-relaxed lg:leading-loose">
-                    <p class='font-semibold'>What is this webpage?</p>
-                    <p>This is a very basic webpage that tells users about the weather in any location in the world.</p>
+
+                    {{!-- Q&A --}}
+                    <p class="font-bold leading-loose">What is this webpage?</p>
+                    <p>This is a very basic webpage that tells users about the weather in any location in the world. It
+                        uses data from <a href="https://www.mapbox.com/" target="_blank"
+                            class='underline hover:text-colorT-three'>mapbox.com</a> and <a
+                            href="https://weatherstack.com/" target="_blank"
+                            class='underline hover:text-colorT-three'>weatherstack.com</a>.</p>
                     <br>
-                    <p class='font-semibold'>How does it work?</p>
+                    <p class="font-bold leading-loose">How does it work?</p>
                     <p>It's very simple. Click on the 'weather' tab. On this page the user will find an input box where
                         he/she can type in the location they want. Click the 'search' button beside the input box and
                         voilà!
                     </p>
                     <br>
-                    <p class='font-semibold'>I followed the instructions, but got the weather information from some
+                    <p class="font-bold leading-loose">I followed the instructions, but got the weather information from
+                        some
                         other
                         place. What can I do?</p>
-                    <p>I suggest users be more specific with their queries. What does this mean? Don't just
-                        type in the city name, try typing in the country's name as well.</p>
+                    <p>In cases like this, I suggest users be more specific with their queries. What does this mean?
+                        Don't just type in the city name, try typing in the country's name as well.</p>
                     <br>
-                    <p class='font-semibold'>Are you a fellow developer?</p>
-                    <p>If you are a developer and want to take a look at the code you can do so <a
-                            class='underline hover:text-colorT-three'
-                            href="https://github.com/santiagocodes/node-udemy-course">here</a>.</p>
+                    <p class="font-bold leading-loose">Are you a fellow developer?</p>
+                    <p>If you are a developer and want to take a look at the code you can do so at <a
+                            href="https://github.com/santiagocodes/weather-app-node" target="_blank"
+                            class="underline hover:text-colorT-three">github.com/santiagocodes/weather-app-node</a>.</p>
                 </div>
             </div>
         </main>
