@@ -54,9 +54,8 @@ Note: This starts up the local developement server easily. This is possible beca
 Note: If you have your API keys hidden in .env you may have to configure the variables into your Heroku account via the dashboard. For more information on this, click [here](https://devcenter.heroku.com/articles/config-vars).
 
 <h2 align='center'>Support</h2>
-
+<br/>
 <p align='center'>
-Reach out at any of the following places.<br>
     <a href="https://twitter.com/maricstgo"><img src="https://img.shields.io/badge/twitter.com-@maricstgo-blue?style=flat&logo=twitter"></a>&nbsp;
     <a href="https://dev.to/santiagocodes"><img src="https://img.shields.io/badge/dev.to-@santiagocodes-black?style=flat&logo=dev.to"></a>&nbsp;
     <a href="https://santiagocodes.com"><img src="https://img.shields.io/badge/website-santiagocodes.com-blueviolet?style=flat"></a>&nbsp;
